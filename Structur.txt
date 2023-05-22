@@ -1,0 +1,21 @@
+src
+├── components
+│   ├── Header.js
+│   ├── Footer.js
+│   └── ...
+├── pages
+│   ├── Home.js
+│   ├── ProductList.js
+│   ├── ProductDetail.js
+│   ├── Cart.js
+│   ├── Checkout.js
+│   ├── OrderConfirmation.js
+│   ├── UserAccount.js
+│   └── ...
+├── services
+│   ├── api.js
+│   └── ...
+├── styles
+│   ├── global.css
+│   └── ...
+└── App.js
