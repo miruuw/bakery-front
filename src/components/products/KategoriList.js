@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-const ProdukList = () => {
+const KategoriList = () => {
   const [produkList, setProdukList] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
     const fetchProdukList = async () => {
       try {
-        const response = await fetch('http://localhost:8080/bc-bakery/v1/produk');
+        const response = await fetch(`http://localhost:8080/bc-bakery/v1/kategori/${categoryId}/produk`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch product list');
+        }
         const data = await response.json();
         setProdukList(data);
       } catch (error) {
@@ -16,7 +20,7 @@ const ProdukList = () => {
     };
 
     fetchProdukList();
-  }, []);
+  }, [categoryId]);
 
   return (
     <div className="container mx-auto">
@@ -43,4 +47,4 @@ const ProdukList = () => {
   );
 };
 
-export default ProdukList;
+export default KategoriList;

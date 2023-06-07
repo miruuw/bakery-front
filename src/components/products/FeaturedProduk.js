@@ -17,8 +17,8 @@ const FeaturedProduk = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Featured Produk</h2>
+    <div className="container mx-auto p-4">
+      <h2 className="text-2xl font-bold mb-4">Produk Unggulan</h2>
       <div className="grid grid-cols-2 gap-4">
         {featuredProduk.map((produk) => (
           <div key={produk._id} className="bg-gray-200 p-4">

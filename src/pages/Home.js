@@ -1,14 +1,16 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import Category from '../components/products/Category';
 import FeaturedProduk from '../components/products/FeaturedProduk';
 import RecentProduk from '../components/products/RecentProduk';
-import Navbar from '../components/common/Navbar';
+import Carousel from '../components/products/Carousel';
+import ServiceUnggulan from '../components/products/ServiceUnggulan';
+
 
 const Home = () => {
   return (
     <div>
-      <Navbar/>
+      <Carousel/>
+      <ServiceUnggulan/>
       <Category/>
       <FeaturedProduk/>
       <RecentProduk/>

@@ -18,8 +18,8 @@ const RecentProduk = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Recent Produk</h2>
+    <div className="container mx-auto p-4">
+      <h2 className="text-2xl font-bold mb-4">Produk Terbaru</h2>
       <div className="grid grid-cols-4 gap-4">
         {recentProduk.map((produk) => (
           <Link key={produk._id} to={`/produk/${produk._id}`}>

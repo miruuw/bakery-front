@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const ProdukDetail = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [produk, setProduk] = useState(null);
   const [jumlah, setJumlah] = useState(1);
@@ -39,11 +40,11 @@ const ProdukDetail = () => {
   };
 
   const masukkanKeKeranjang = () => {
-    console.log(`Produk ${produk.nama} dimasukkan ke keranjang dengan jumlah ${jumlah}`);
+    navigate(`/keranjang?produk=${produk.nama}&jumlah=${jumlah}`);
   };
 
   const beliLangsung = () => {
-    console.log(`Produk ${produk.nama} dibeli langsung dengan jumlah ${jumlah}`);
+    navigate(`/pembayaran?produk=${produk.nama}&jumlah=${jumlah}`);
   };
 
   if (!produk) {
@@ -51,7 +52,7 @@ const ProdukDetail = () => {
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Produk Detail</h2>
       <div className="flex items-center mb-4">
         <img src={produk.gambar} alt={produk.nama} className="w-48 h-auto object-cover mr-4" />
